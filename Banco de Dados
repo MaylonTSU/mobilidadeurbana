@@ -1,0 +1,86 @@
+-- Criação do banco de dados (caso ainda não exista)
+CREATE DATABASE IF NOT EXISTS meu_banco_de_dados;
+
+-- Selecionar o banco de dados
+USE meu_banco_de_dados;
+
+-- Criação da tabela usuario
+CREATE TABLE usuario (
+    userid INT AUTO_INCREMENT PRIMARY KEY, 
+    nome VARCHAR(100) NOT NULL,            
+    email VARCHAR(255) NOT NULL UNIQUE,    
+    senha VARCHAR(255) NOT NULL             
+);
+
+-- Adicionando um índice único ao campo 'email' para garantir que não haja emails duplicados
+CREATE UNIQUE INDEX idx_email ON usuario(email);
+
+-- Criação da tabela motorista
+CREATE TABLE motorista (
+    userid INT PRIMARY KEY,               
+    nome VARCHAR(100) NOT NULL,          
+    email VARCHAR(255) NOT NULL UNIQUE,  
+    senha VARCHAR(255) NOT NULL,         
+    CNH VARCHAR(20) NOT NULL,           
+    veiculo VARCHAR(100),               
+    FOREIGN KEY (userid) REFERENCES usuario(userid) 
+);
+
+-- Criação de um índice para otimizar buscas
+CREATE INDEX idx_motorista_cnh ON motorista(CNH);
+
+-- Criação da tabela gerente
+CREATE TABLE gerente (
+    gerenteid INT PRIMARY KEY,             
+    nome VARCHAR(100) NOT NULL,            
+    email VARCHAR(255) NOT NULL UNIQUE,    
+    senha VARCHAR(255) NOT NULL,           
+    departamento VARCHAR(100) NOT NULL,    
+    FOREIGN KEY (gerenteid) REFERENCES usuario(userid) 
+);
+
+-- Criação de um índice para otimizar buscas
+CREATE INDEX idx_gerente_departamento ON gerente(departamento);
+
+-- Criação da tabela passageiro
+CREATE TABLE passageiro (
+    passageiroid INT PRIMARY KEY,               
+    nome VARCHAR(100) NOT NULL,                
+    email VARCHAR(255) NOT NULL UNIQUE,        
+    senha VARCHAR(255) NOT NULL,               
+    metododepagamento VARCHAR(50) NOT NULL,    
+    FOREIGN KEY (passageiroid) REFERENCES usuario(userid) 
+);
+
+-- Criação de um índice para otimizar buscas
+CREATE INDEX idx_passageiro_metododepagamento ON passageiro(metododepagamento);
+
+-- Criação da tabela corrida
+CREATE TABLE corrida (
+    corridaid INT AUTO_INCREMENT PRIMARY KEY,  
+    startlocalizacao VARCHAR(255) NOT NULL,    
+    endlocalizacao VARCHAR(255) NOT NULL,      
+    corridastatus VARCHAR(50) NOT NULL,        
+    tarifa DECIMAL(10, 2) NOT NULL,           
+    motoristaid INT NOT NULL,                  
+    passageiroid INT NOT NULL,                 
+    FOREIGN KEY (motoristaid) REFERENCES motorista(userid), 
+    FOREIGN KEY (passageiroid) REFERENCES passageiro(userid) 
+);
+
+-- Criação de um índice para otimizar buscas
+CREATE INDEX idx_corrida_motorista ON corrida(motoristaid);
+CREATE INDEX idx_corrida_passageiro ON corrida(passageiroid);
+
+-- Criação da tabela tarifa
+CREATE TABLE tarifa (
+    tarifaid INT AUTO_INCREMENT PRIMARY KEY,   
+    tarifabase DECIMAL(10, 2) NOT NULL,        
+    tarifadistancia DECIMAL(10, 2) NOT NULL,   
+    tarifatotal DECIMAL(10, 2) NOT NULL,       
+    corridaid INT NOT NULL,                    
+    FOREIGN KEY (corridaid) REFERENCES corrida(corridaid) 
+);
+
+-- Criação de um índice para otimizar buscas
+CREATE INDEX idx_tarifa_corrida ON tarifa(corridaid);
