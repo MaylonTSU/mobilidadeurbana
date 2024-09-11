@@ -1,0 +1,405 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#F5F5F5">
+
+    <!-- Tabs de Notícias e Carteiras -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#53B1A9"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/noticiasTab"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:backgroundTint="#53B1A9"
+            android:text="NOTÍCIAS"
+            android:textColor="#FFFFFF" />
+
+        <Button
+            android:id="@+id/carteirasTab"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:backgroundTint="#53B1A9"
+            android:text="CARTEIRAS"
+            android:textColor="#FFFFFF" />
+    </LinearLayout>
+
+    <!-- Lista de Carteiras -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!-- Carteiras 1 -->
+            <?xml version="1.0" encoding="utf-8"?>
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:elevation="4dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:paddingTop="8dp">
+
+                    <ImageView
+                        android:id="@+id/icone_carteira"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_marginEnd="10dp"
+                        android:src="@drawable/ic_iamgecard" />
+
+                    <!-- Nome da Carteira -->
+                    <TextView
+                        android:id="@+id/nome_carteira"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Carteira da Ana"
+                        android:textStyle="bold"
+                        android:textSize="18sp" />
+
+                    <!-- Gênero e Idade -->
+                    <TextView
+                        android:id="@+id/info_carteira"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Feminino - 15 anos"
+                        android:layout_marginStart="10dp"
+                        android:textSize="14sp"
+                        android:textColor="#757575" />
+                </LinearLayout>
+
+                    <!-- Notificação da Vacina -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal"
+                        android:paddingTop="8dp">
+
+                        <ImageView
+                            android:id="@+id/icone_vacina"
+                            android:layout_width="25dp"
+                            android:layout_height="25dp"
+                            android:layout_marginStart="70dp"
+                            android:src="@drawable/ic_notification2" />
+
+                        <TextView
+                            android:id="@+id/status_vacina"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginStart="8dp"
+                            android:text="Vacina HPV atrasada"
+                            android:textSize="16sp"
+                            android:textColor="@android:color/holo_red_dark" />
+                    </LinearLayout>
+
+                    <!-- Botões Atualizar e Alertas -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:paddingTop="8dp">
+
+                        <Button
+                            android:id="@+id/btn_atualizar"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="170dp"
+                            android:backgroundTint="@color/white"
+                            android:textColor="#53B1A9"
+                            android:text="ATUALIZAR" />
+
+                        <ImageButton
+                            android:id="@+id/btn_favorito"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginEnd="10dp"
+                            android:background="@color/white"
+                            android:src="@drawable/ic_favorite" />
+
+                        <ImageButton
+                            android:id="@+id/btn_alerta"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:background="@color/white"
+                            android:src="@drawable/ic_notification" />
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+
+            <!-- Notícia 2 -->
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:elevation="4dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:paddingTop="8dp">
+
+                    <ImageView
+                        android:id="@+id/icone_carteira"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_marginEnd="10dp"
+                        android:src="@drawable/ic_iamgecard"
+                        tools:ignore="DuplicateIds" />
+
+                    <TextView
+                        android:id="@+id/nome_carteira"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Carteira da João"
+                        android:textStyle="bold"
+                        android:textSize="18sp"
+                        tools:ignore="DuplicateIds" />
+
+                    <TextView
+                        android:id="@+id/info_carteira"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Masculino - 25 anos"
+                        android:textColor="#757575"
+                        android:textSize="14sp"
+                        android:layout_marginStart="10dp"
+                        tools:ignore="DuplicateIds" />
+                </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:paddingTop="8dp">
+
+                        <Button
+                            android:id="@+id/btn_atualizar"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="170dp"
+                            android:backgroundTint="@color/white"
+                            android:textColor="#53B1A9"
+                            android:text="ATUALIZAR"
+                            tools:ignore="DuplicateIds" />
+
+                        <ImageButton
+                            android:id="@+id/btn_favorito"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginEnd="10dp"
+                            android:background="@color/white"
+                            android:src="@drawable/ic_favorite"
+                            tools:ignore="DuplicateIds" />
+
+                        <ImageButton
+                            android:id="@+id/btn_alerta"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:background="@color/white"
+                            android:src="@drawable/ic_notification"
+                            tools:ignore="DuplicateIds" />
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <!-- Notícia 3 -->
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:elevation="4dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:paddingTop="8dp">
+
+                        <ImageView
+                            android:id="@+id/icone_carteira"
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:layout_marginEnd="10dp"
+                            android:src="@drawable/ic_iamgecard"
+                            tools:ignore="DuplicateIds" />
+
+                        <TextView
+                            android:id="@+id/nome_carteira"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Carteira da Marcelo"
+                            android:textStyle="bold"
+                            android:textSize="18sp"
+                            tools:ignore="DuplicateIds" />
+
+                        <TextView
+                            android:id="@+id/info_carteira"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Masculino - 1 ano"
+                            android:textColor="#757575"
+                            android:textSize="14sp"
+                            android:layout_marginStart="10dp"
+                            tools:ignore="DuplicateIds" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:paddingTop="8dp">
+
+                        <Button
+                            android:id="@+id/btn_atualizar"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="170dp"
+                            android:backgroundTint="@color/white"
+                            android:textColor="#53B1A9"
+                            android:text="ATUALIZAR"
+                            tools:ignore="DuplicateIds" />
+
+                        <ImageButton
+                            android:id="@+id/btn_favorito"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginEnd="10dp"
+                            android:background="@color/white"
+                            android:src="@drawable/ic_favorite"
+                            tools:ignore="DuplicateIds" />
+
+                        <ImageButton
+                            android:id="@+id/btn_alerta"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:background="@color/white"
+                            android:src="@drawable/ic_notification"
+                            tools:ignore="DuplicateIds" />
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+        </LinearLayout>
+    </ScrollView>
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <!-- Conteúdo da sua tela, como ScrollView etc. -->
+        <LinearLayout
+            android:id="@+id/linearLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:padding="16dp">
+            <!-- Seu conteúdo aqui -->
+        </LinearLayout>
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fab_adicionar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="16dp"
+            android:backgroundTint="@color/white"
+            android:src="@drawable/ic_add"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            tools:visibility="visible" />
+
+        <!-- Barra inferior -->
+        <com.google.android.material.bottomappbar.BottomAppBar
+            android:id="@+id/bottomAppBar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:backgroundTint="#53B1A9">
+
+            <ImageButton
+                android:id="@+id/settingsButton"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_gravity="start"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:contentDescription="Configurações"
+                android:src="@drawable/ic_congif"
+                app:tint="#FFFFFF" />
+
+            <ImageButton
+                android:id="@+id/searchButton"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_gravity="end"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:contentDescription="Pesquisar"
+                android:src="@android:drawable/ic_menu_search"
+                app:tint="#FFFFFF" />
+
+            <ImageButton
+                android:id="@+id/shareButton"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_gravity="end"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:contentDescription="Compartilhar"
+                android:src="@drawable/ic_share"
+                app:tint="#FAFAFA" />
+
+
+
+        </com.google.android.material.bottomappbar.BottomAppBar>
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+
+</LinearLayout>
